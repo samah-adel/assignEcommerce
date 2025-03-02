@@ -16,7 +16,14 @@ export default function Home() {
   let [searchTerm, setSearchTerm] = useState("");
   let [favoriteProducts, setFavoriteProducts] = useState({});
 
-
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const user = localStorage.getItem("token");
+      if (!user) {
+        router.push("/signup");
+      }
+    }
+  }, []);
 
   function getAllProduct() {
     setLoading(true);
@@ -77,7 +84,7 @@ export default function Home() {
     })
 
   }
-  
+
   return (
     <>
       {loading ? (

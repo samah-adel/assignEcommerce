@@ -10,11 +10,11 @@ export default function CartContextProvider({ children }) {
     let [numsCartItems, setnumsCartItems] = useState(null);
     const baseUrl = 'https://ecommerce.routemisr.com/api/v1/cart';
     if (typeof window !== "undefined") {
-        const headersOption = {
-            headers: {
-                token: localStorage.getItem("token"),
-            },
-        };
+    const headersOption = {
+        headers: {
+            token: localStorage.getItem("token"),
+        },
+    };
     }
     useEffect(() => {
         if (typeof window !== "undefined") {

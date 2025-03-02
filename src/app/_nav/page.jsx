@@ -48,23 +48,27 @@ export default function Navbar() {
 
                     <div className="hidden md:flex w-full justify-between items-center">
 
-                        <ul className="flex-1 flex justify-center  p-1 md:p-0 border border-gray-100 rounded-lg md:space-x-4 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                            {token ? (
-                                <>
+
+                        {token ? (
+                            <>
+                                <ul className="flex-1 flex justify-center  p-1 md:p-0 border border-gray-100 rounded-lg md:space-x-4 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                                     <li><Link href="/" className="py-2 px-1 text-gray-600 hover:text-gray-900">Home</Link></li>
                                     <li><Link href="/cart" className="py-2 px-1 text-gray-600 hover:text-gray-900">Cart</Link></li>
                                     <li><Link href="/wishList" className="py-2 px-1 text-gray-600 hover:text-gray-900">Wish List</Link></li>
                                     <li><Link href="/products" className="py-2 px-1 text-gray-600 hover:text-gray-900">Products</Link></li>
                                     <li><Link href="/categories" className="py-2 px-1 text-gray-600 hover:text-gray-900">Categories</Link></li>
                                     <li><Link href="/brands" className="py-2 px-1 text-gray-600 hover:text-gray-900">Brands</Link></li>
-                                </>
-                            ) : (
-                                <>
+                                </ul>
+                            </>
+                        ) : (
+                            <>
+                                <ul className="flex-1 flex justify-end  p-1 md:p-0 border border-gray-100 rounded-lg md:space-x-4 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                                     <li><Link href="/signup" className="py-2 px-1 text-gray-900 hover:text-blue-700">register</Link></li>
                                     <li><Link href="/login" className="py-2 px-1 text-gray-900 hover:text-blue-700">login</Link></li>
-                                </>
-                            )}
-                        </ul>
+                                </ul>
+                            </>
+                        )}
+
 
                         {/* أيقونة السلة وزر تسجيل الخروج */}
                         {token && (
@@ -78,8 +82,8 @@ export default function Navbar() {
                         )}
                     </div>
                 </div>
-            </nav>
-        </div>
+            </nav >
+        </div >
 
     </>
     );
