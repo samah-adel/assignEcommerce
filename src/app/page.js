@@ -8,8 +8,11 @@ import { useContext } from 'react';
 import { CartContext } from '@/context/cart';
 import { WishListContext } from '@/context/wishList';
 import toast, { Toaster } from 'react-hot-toast';
+import { useRouter } from 'next/router';
+
 
 export default function Home() {
+  const router = useRouter();
   let [productList, setProduct] = useState([]);
   let [filteredProducts, setFilteredProducts] = useState([]);
   let [loading, setLoading] = useState(true);
