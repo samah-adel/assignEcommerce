@@ -14,11 +14,13 @@ export default function Navbar() {
     let { token, setToken } = useContext(AuthContext);
 
     function logout() {
-        localStorage.removeItem("token");
-        setToken(null);
-        redirect('/login')
+        if (typeof window !== "undefined") {
+            localStorage.removeItem("token");
+            setToken(null);
+            redirect('/login')
+        }
     }
-    
+
     return (<>
         <div className='bg-gray-100'>
             <nav className="w-11/12 mx-auto border-gray-100 py-2  dark:bg-gray-900">

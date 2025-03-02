@@ -1,5 +1,5 @@
 'use client'
-import React, { useState  } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -27,12 +27,13 @@ export default function CheckOut({ params }) {
         onSubmit: CheckOutApi,
         validationSchema: validYup,
     });
-    const headersOption = {
-        headers: {
-            token: localStorage.getItem("token")
-        },
-    };
-
+    if (typeof window !== "undefined") {
+        const headersOption = {
+            headers: {
+                token: localStorage.getItem("token")
+            },
+        };
+    }
     async function CheckOutApi(values) {
         const data = {
             shippingAddress: values,
@@ -48,7 +49,7 @@ export default function CheckOut({ params }) {
                 setError(err.response?.data?.message);
             });
     }
-   
+
 
     return (
         <div className='mt-11'>

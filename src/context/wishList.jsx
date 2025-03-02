@@ -7,11 +7,13 @@ export let WishListContext = createContext();
 export default function WishListProvider({ children }) {
 
     const baseUrl = 'https://ecommerce.routemisr.com/api/v1/wishlist';
-    const headersOption = {
-        headers: {
-            token: localStorage.getItem("token"),
-        },
-    };
+    if (typeof window !== "undefined") {
+        const headersOption = {
+            headers: {
+                token: localStorage.getItem("token"),
+            },
+        };
+    }
     function addUserList(id) {
         let data = {
             productId: id,
