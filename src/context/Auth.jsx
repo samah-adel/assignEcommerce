@@ -6,10 +6,12 @@ export let AuthContext = createContext();
 export default function AuthContextProvider({ children }) {
   let [token, setToken] = useState(null);
   useEffect(() => {
-    let TokenStorage = localStorage.getItem("token");
-    if (TokenStorage) {
-      setToken(TokenStorage);
+    if (typeof window !== "undefined") {
+      let TokenStorage = localStorage.getItem("token");
+      if (TokenStorage) {
+        setToken(TokenStorage);
 
+      }
     }
   }, [])
   return (
