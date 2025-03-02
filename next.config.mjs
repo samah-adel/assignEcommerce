@@ -2,11 +2,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['ecommerce.routemisr.com'], // السماح بعرض الصور من هذا الدومين
+    domains: ['ecommerce.routemisr.com'], 
   },
-  reactStrictMode: true, // تحسين الأداء وإظهار الأخطاء في التطوير
+  reactStrictMode: true, 
   experimental: {
-    appDir: true, // دعم هيكل المجلد الجديد في Next.js
+   
   },
 };
 

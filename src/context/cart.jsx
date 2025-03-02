@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 export let CartContext = createContext();
 
 export default function CartContextProvider({ children }) {
+
     let [numsCartItems, setnumsCartItems] = useState(null);
     const baseUrl = 'https://ecommerce.routemisr.com/api/v1/cart';
     const headersOption = {
@@ -15,10 +16,12 @@ export default function CartContextProvider({ children }) {
     };
 
     useEffect(() => {
-        if (localStorage.getItem("token")) {
-            getUserCart().then((req) => {
-                setnumsCartItems(req.data.numOfCartItems)
-            })
+        if (typeof window !== "undefined") {
+            if (localStorage.getItem("token")) {
+                getUserCart().then((req) => {
+                    setnumsCartItems(req.data.numOfCartItems)
+                })
+            }
         }
     }, []);
 
