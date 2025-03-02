@@ -8,11 +8,11 @@ import { useContext } from 'react';
 import { CartContext } from '@/context/cart';
 import { WishListContext } from '@/context/wishList';
 import toast, { Toaster } from 'react-hot-toast';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 
 export default function Home() {
-  const router = useRouter();
+  let router = useRouter();
   let [productList, setProduct] = useState([]);
   let [filteredProducts, setFilteredProducts] = useState([]);
   let [loading, setLoading] = useState(true);
@@ -21,6 +21,7 @@ export default function Home() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
+
       const user = localStorage.getItem("token");
       if (!user) {
         router.push("/signup");

@@ -32,15 +32,16 @@ export default function Login() {
   async function LoginApi(data) {
     await axios.post(`${baseUrl}/api/v1/auth/signin`, data).then((req) => {
 
-      if (typeof window !== "undefined") {
-        if (req.data.message == "success") {
 
+      if (req.data.message == "success") {
+        if (typeof window !== "undefined") {
           localStorage.setItem("token", req.data.token)
           setToken(req.data.token)
           router.push('/')
-
         }
+
       }
+
 
     }).catch((err) => {
 

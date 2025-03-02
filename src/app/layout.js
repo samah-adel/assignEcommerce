@@ -2,7 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./_nav/page";
 import CartContextProvider from "@/context/cart";
-import ContextProvider from '../context/'
+import AuthContextProvider from '@/context/Auth'
 import WishListProvider from "@/context/wishList";
 
 const geistSans = Geist({

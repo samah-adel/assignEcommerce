@@ -14,6 +14,7 @@ export default function WishListProvider({ children }) {
             },
         };
     }
+
     function addUserList(id) {
         let data = {
             productId: id,

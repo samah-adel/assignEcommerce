@@ -63,14 +63,14 @@ export default function Navbar() {
                         ) : (
                             <>
                                 <ul className="flex-1 flex justify-end  p-1 md:p-0 border border-gray-100 rounded-lg md:space-x-4 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                                    <li><Link href="/signup" className="py-2 px-1 text-gray-900 hover:text-blue-700">register</Link></li>
-                                    <li><Link href="/login" className="py-2 px-1 text-gray-900 hover:text-blue-700">login</Link></li>
+                                    <li><Link href="/signup" className="py-2 px-1 text-gray-600 hover:text-gray-900">register</Link></li>
+                                    <li><Link href="/login" className="py-2 px-1 text-gray-600 hover:text-gray-900">login</Link></li>
                                 </ul>
                             </>
                         )}
 
 
-                        {/* أيقونة السلة وزر تسجيل الخروج */}
+
                         {token && (
                             <div className="flex items-center space-x-6">
                                 <Link href="/cart" className='relative'>
